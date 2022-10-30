@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] Rigidbody rig;
     [SerializeField] float jumpForce;
     [SerializeField] int score;
+    [SerializeField] Ui ui;
+
     private bool isGrounded;
 
     
@@ -61,5 +63,6 @@ public class Player : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+        ui.SetScoreText(score);
     }
 }
