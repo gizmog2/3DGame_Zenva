@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] Rigidbody rig;
     [SerializeField] float jumpForce;
+    [SerializeField] int score;
     private bool isGrounded;
 
     
@@ -30,10 +31,11 @@ public class Player : MonoBehaviour
             transform.forward = vel;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isGrounded = false;
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Debug.Log("Jump.");
         }
 
         if (transform.position.y < -10)
@@ -54,5 +56,10 @@ public class Player : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
     }
 }
