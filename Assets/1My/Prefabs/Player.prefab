@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7968802305036756231}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +80,8 @@ MonoBehaviour:
   moveSpeed: 3
   rig: {fileID: 7968802305036756473}
   jumpForce: 4
+  score: 0
+  ui: {fileID: 0}
 --- !u!1001 &7968802303796437399
 PrefabInstance:
   m_ObjectHideFlags: 0
